@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>echarts学习</title>
+    <!-- 1.本地引入echarts -->
+    <script src="./echarts.js"></script>
+    <!-- 2.cdn引入 echarts -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.js"></script> -->
+</head>
+<body>
+    <!-- 2.为ECharts准备一个指定宽高的 Dom -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 3.获取准备好的dom元素，并利用echarts.init方法初始化echarts实例
+        const myChart = echarts.init(document.getElementById('main'));
+        // 4.利用实例的 setOption() 方法绘制图表,它接收一个配置对象。这个配置对象指定了要绘制图表的配置项和数据。
+        // 4.1指定图表的配置项和数据
+        const option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data: ['销量']
+            },
+            xAxis: {
+                data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+            },
+            yAxis: {},
+            series: [
+                {
+                    name: '销量',
+                    type: 'bar',
+                    data: [5, 20, 36, 10, 10, 20]
+                }
+            ]
+        };
+        // 4.2使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+       
+    </script>
+</body>
+
